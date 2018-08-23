@@ -20,4 +20,12 @@ describe('Cell', () => {
         expect(cellComponent.find(".cell").text()).to.be.equal("X")
     })
 
+    it('should not allow a cell to change once populated', () => {
+        let cellComponent = shallow(<Cell foo="bar" />)
+        cellComponent.find(".cell").simulate("click")
+        cellComponent.find(".cell").simulate("click")        
+        cellComponent.find(".cell").text = "O"
+        expect(cellComponent.find(".cell").text()).to.be.equal("O")
+    })    
+
 })

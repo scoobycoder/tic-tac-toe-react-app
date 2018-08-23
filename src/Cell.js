@@ -14,7 +14,10 @@ class Cell extends React.Component {
     }
 
     markIt() {
-        this.setState({ mark: "X"})
+        console.log(`this.state.mark: ${this.state.mark}`)
+        if (!!this.state.mark) {
+            this.setState({ mark: "X"})
+        }        
     }
 }
 
